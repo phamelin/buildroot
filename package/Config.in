@@ -335,6 +335,9 @@ source "package/liboil/Config.in"
 source "package/libsigc/Config.in"
 source "package/startup-notification/Config.in"
 source "package/boost/Config.in"
+menu "Orocos"
+source "package/orocos-log4cpp/Config.in"
+endmenu
 endmenu
 
 menu "Text and terminal handling"

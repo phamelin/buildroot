@@ -333,6 +333,7 @@ source "package/libglib2/Config.in"
 source "package/liboil/Config.in"
 source "package/libsigc/Config.in"
 source "package/startup-notification/Config.in"
+source "package/boost/Config.in"
 endmenu
 
 menu "Text and terminal handling"

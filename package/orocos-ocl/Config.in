@@ -1,0 +1,10 @@
+config BR2_PACKAGE_OROCOS_OCL
+	bool "orocos-ocl"
+	select BR2_PACKAGE_OMNIORB
+	select BR2_PACKAGE_OROCOS_RTT
+	select BR2_PACKAGE_OROCOS_LOG4CPP
+	select BR2_PACKAGE_READLINE
+	help
+	The Orocos 2 toolchain is your primary tool to create real-time robotics applications using modular, run-time configurable software components. OCL is the Orocos Component Library, the necessary components to start an application and interact with it at run-time.
+
+	  http://www.orocos.org

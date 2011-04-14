@@ -1,0 +1,13 @@
+config BR2_PACKAGE_OROCOS_RTT
+	bool "orocos-rtt"
+	select BR2_PACKAGE_BOOST
+	select BR2_PACKAGE_OMNIORB
+	select BR2_PACKAGE_BOOST_CONFIG_THREADING
+	select BR2_PACKAGE_BOOST_FILESYSTEM
+	select BR2_PACKAGE_BOOST_PROGRAM_OPTIONS
+	select BR2_PACKAGE_BOOST_SERIALIZATION
+	select BR2_PACKAGE_BOOST_SYSTEM
+	help
+	The Orocos 2 toolchain is your primary tool to create real-time robotics applications using modular, run-time configurable software components. RTT is the Real-Time Toolkit, a component framework that allows us to write real-time components in C++.
+
+	  http://www.orocos.org

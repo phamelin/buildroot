@@ -324,6 +324,7 @@ source "package/libosip2/Config.in"
 source "package/librsync/Config.in"
 source "package/libsoup/Config.in"
 source "package/libupnp/Config.in"
+source "package/omniorb/Config.in"
 endmenu
 
 menu "Other"
@@ -338,6 +339,12 @@ source "package/libglib2/Config.in"
 source "package/liboil/Config.in"
 source "package/libsigc/Config.in"
 source "package/startup-notification/Config.in"
+source "package/boost/Config.in"
+menu "Orocos"
+source "package/orocos-log4cpp/Config.in"
+source "package/orocos-rtt/Config.in"
+source "package/orocos-ocl/Config.in"
+endmenu
 endmenu
 
 menu "Text and terminal handling"

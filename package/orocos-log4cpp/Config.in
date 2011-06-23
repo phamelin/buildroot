@@ -1,0 +1,6 @@
+config BR2_PACKAGE_OROCOS_LOG4CPP
+	bool "orocos-log4cpp"
+	help
+	The Orocos port of the log4cpp logging library. 
+
+	  http://www.orocos.org

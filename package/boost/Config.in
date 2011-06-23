@@ -1,0 +1,166 @@
+config BR2_PACKAGE_BOOST
+	bool "boost"
+	default n
+	help
+	  The Boost web site provides free, peer-reviewed, portable C++ source
+	  libraries. The emphasis is on libraries which work well with the C++
+	  Standard Library. One goal is to establish "existing practice" and
+	  provide reference implementations so that the Boost libraries are
+	  suitable for eventual standardization. Some of the libraries have
+	  already been proposed for inclusion in the C++ Standards Committee's
+	  upcoming C++ Standard Library Technical Report.
+	  
+	  http://www.boost.org/libs/
+
+config BR2_PACKAGE_BOOST_CONFIG_THREADING
+	depends on BR2_PACKAGE_BOOST
+	bool "threading support"
+	default n
+	help
+	  Compile boost libraries with threading support.
+
+menu "library selection"
+	depends on BR2_PACKAGE_BOOST
+
+config BR2_PACKAGE_BOOST_DATE_TIME
+	bool "date_time"
+	default n
+	help
+	  Date-Time library.
+	  
+	  from Jeff Garland
+
+config BR2_PACKAGE_BOOST_FILESYSTEM
+	bool "filesystem"
+	default n
+	help
+	  Portable paths, iteration over directories, and other useful
+	  filesystem operations.
+	  
+	  from Beman Dawes
+
+config BR2_PACKAGE_BOOST_FUNCTION_TYPES
+	bool "function_types"
+	default n
+	help
+	  Type traits for callable, built-in types.
+	  
+	  from Tobias Schwinger
+
+config BR2_PACKAGE_BOOST_GRAPH
+	bool "graph"
+	default n
+	help
+
+	  Generic graph components and algorithms.
+	  
+	  from Jeremy Siek and a University of Notre Dame team.
+
+config BR2_PACKAGE_BOOST_IOSTREAMS
+	bool "iostreams"
+	default n
+	help
+	  Framework for defining streams, stream buffers and i/o
+	  filters.
+	  
+	  from Jonathan Turkanis
+	  
+	  Currently this library is compiled with -sNO_COMPRESSION
+	  which disables libz and libbz usage.
+
+#config BR2_PACKAGE_BOOST_MPI
+#	bool "mpi"
+#	default n
+#	help
+#	  Message Passing Interface library, for use in
+#	  distributed-memory parallel application programming.
+#	  
+#	  from Douglas Gregor and Matthias Troyer
+
+config BR2_PACKAGE_BOOST_PROGRAM_OPTIONS
+	bool "program_options"
+	default y
+	help
+	  Access to configuration data given on command line, in
+	  config files and other sources.
+	  
+	  from Vladimir Prus
+
+config BR2_PACKAGE_BOOST_PYTHON
+	bool "python"
+	depends on BR2_PACKAGE_PYTHON
+	default n
+	help
+	  Reflects C++ classes and functions into Python
+	  
+	  from Dave Abrahams
+
+comment "python          - disabled (requires python)"
+        depends on !BR2_PACKAGE_PYTHON
+
+config BR2_PACKAGE_BOOST_REGEX
+	bool "regex"
+	default n
+	help
+	  Regular expression library.
+	  
+	  from John Maddock
+
+config BR2_PACKAGE_BOOST_SERIALIZATION
+	bool "serialization"
+	default n
+	help
+	  Serialization of arbitrary data for persistence and
+	  marshalling.
+	  
+	  from Robert Ramey
+
+config BR2_PACKAGE_BOOST_SIGNALS
+	bool "signals"
+	default n
+	help
+	  Managed signals and slots callback implementation.
+	  
+	  from Doug Gregor
+
+config BR2_PACKAGE_BOOST_SYSTEM
+	bool "system"
+	default n
+	help
+	  Operating system support, including the diagnostics support
+	  that will be part of the C++0x standard library.
+	  
+	  from Beman Dawes
+
+config BR2_PACKAGE_BOOST_TEST
+	bool "test"
+	default n
+	help
+	  Support for simple program testing, full unit testing, and
+	  for program execution monitoring.
+	  
+	  from Gennadiy Rozental
+
+config BR2_PACKAGE_BOOST_THREAD
+	bool "thread"
+	depends on BR2_PACKAGE_BOOST_CONFIG_THREADING
+	default n
+	help
+	  Portable C++ multi-threading.
+	  
+	  from William Kempf
+
+comment "thread          - disabled (requires threading support)"
+        depends on !BR2_PACKAGE_BOOST_CONFIG_THREADING
+
+config BR2_PACKAGE_BOOST_WAVE
+	bool "wave"
+	default n
+	help
+	  Standards conformant implementation of the mandated C99/C++
+	  preprocessor functionality packed behind an easy to use
+	  iterator interface.
+	  
+	  from Hartmut Kaiser
+
+endmenu
